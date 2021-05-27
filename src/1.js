@@ -386,3 +386,100 @@
 //   могут отсутствовать.
 //     Тогда, в новом объекте задачи, в свойствах category и priority должны быть значения по умолчанию,
 //   хранящиеся в одноимённых локальных переменных.
+// function makeTask(data) {
+//   const completed = false;
+//   const category = 'General';
+//   const priority = 'Normal';
+
+//   // Change code belo this line
+//   const newData = { completed, category, priority, ...data };
+//   return newData;
+//   // Change code above this line
+// }
+// console.log(makeTask({ priority: 'Low', text: 'Choose shampoo' })); //{ category: "General", priority: "Low", text: "Choose shampoo", completed: false }
+
+// ================ Задание 31  =================
+// Используя операцию rest дополни код функции add() так,
+//   чтобы она принимала любое количество аргументов, считала и возвращала их сумму.
+// Change code below this line
+
+// function add(...args) {
+//   let total = 0;
+
+//   for (const arg of args) {
+//     total += arg;
+//   }
+
+//   return total;
+// Change code above this line
+// }
+// ================ Задание 32  =================
+// Функция addOverNum() считает сумму всех аргументов.
+// Измени параметры и тело функции addOverNum() так, чтобы она считала сумму
+// только тех аргументов, которые больше чем заданное число.
+// Это число должно быть первым параметром функции.
+// Change code below this line
+// function addOverNum(...args) {
+//   let total = 0;
+//   for (let i = 0; i <= args.length - 1; i += 1) {
+//     if (args[i] > args[0]) {
+//       total += args[i];
+//     }
+//   }
+//   return total;
+// }
+// console.log(addOverNum(10, 12, 4, 11, 48, 10, 8));
+// console.log(addOverNum(15, 32, 6, 13, 19, 8));
+
+// ================ Задание 33  =================
+// Change code below this line
+function findMatches(...args) {
+  const matches = [];
+  for (let i = 1; i < args.length; i += 1) {
+    if (args[0].includes(args[i])) {
+      matches.push(args[i]);
+    }
+  }
+  return matches;
+}
+console.log(findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7));
+
+// ================ Задание 34  =================
+// Добавь объекту bookShelf ещё два метода, которые пока что будут возвращать
+// просто строки по аналогии с getBooks() и addBook(bookName).
+
+// Метод removeBook(bookName) будет удалять книгу по имени.
+// Возвращает строку "Deleting book <имя книги>", где < имя книги > это значение параметра bookName.
+
+// Метод updateBook(oldName, newName) будет обновлять название книги на новое.
+// Возвращает строку "Updating book <старое имя> to <новое имя>", где < старое имя > и
+//   < новое имя > это значения параметров oldName и newName соотвественно.
+
+const bookShelf = {
+  // Change code below this line
+  books: ['The last kingdom', 'The guardian of dreams'],
+  getBooks() {
+    return 'Returning all books';
+  },
+  addBook(bookName) {
+    return `Adding book ${bookName}`;
+  },
+  removeBook(bookName) {
+    return `Deleting book ${bookName}`;
+  },
+  updateBook(oldName, newName) {
+    return `Updating book ${oldName} to ${newName}`;
+  },
+  // Change code above this line
+};
+console.log(bookShelf.updateBook('Sands of dune', 'Dune'));
+
+// ================ Задание 35  =================
+
+// ================ Задание 39  =================
+// const atTheOldToad = {
+//   potions: ["Speed potion", "Dragon breath", "Stone skin"],
+//   removePotion(potionName) {
+//     this.potions.splice(this.potions.indexOf(potionName), 1);
+//   },
+// };
