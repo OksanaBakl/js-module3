@@ -432,17 +432,17 @@
 // console.log(addOverNum(15, 32, 6, 13, 19, 8));
 
 // ================ Задание 33  =================
-// Change code below this line
-function findMatches(...args) {
-  const matches = [];
-  for (let i = 1; i < args.length; i += 1) {
-    if (args[0].includes(args[i])) {
-      matches.push(args[i]);
-    }
-  }
-  return matches;
-}
-console.log(findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7));
+// // Change code below this line
+// function findMatches(...args) {
+//   const matches = [];
+//   for (let i = 1; i < args.length; i += 1) {
+//     if (args[0].includes(args[i])) {
+//       matches.push(args[i]);
+//     }
+//   }
+//   return matches;
+// }
+// console.log(findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7));
 
 // ================ Задание 34  =================
 // Добавь объекту bookShelf ещё два метода, которые пока что будут возвращать
@@ -455,26 +455,63 @@ console.log(findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7));
 // Возвращает строку "Updating book <старое имя> to <новое имя>", где < старое имя > и
 //   < новое имя > это значения параметров oldName и newName соотвественно.
 
-const bookShelf = {
-  // Change code below this line
-  books: ['The last kingdom', 'The guardian of dreams'],
-  getBooks() {
-    return 'Returning all books';
-  },
-  addBook(bookName) {
-    return `Adding book ${bookName}`;
-  },
-  removeBook(bookName) {
-    return `Deleting book ${bookName}`;
-  },
-  updateBook(oldName, newName) {
-    return `Updating book ${oldName} to ${newName}`;
-  },
-  // Change code above this line
-};
-console.log(bookShelf.updateBook('Sands of dune', 'Dune'));
+// const bookShelf = {
+//   // Change code below this line
+//   books: ['The last kingdom', 'The guardian of dreams'],
+//   getBooks() {
+//     return 'Returning all books';
+//   },
+//   addBook(bookName) {
+//     return `Adding book ${bookName}`;
+//   },
+//   removeBook(bookName) {
+//     return `Deleting book ${bookName}`;
+//   },
+//   updateBook(oldName, newName) {
+//     return `Updating book ${oldName} to ${newName}`;
+//   },
+//   // Change code above this line
+// };
+// console.log(bookShelf.updateBook('Sands of dune', 'Dune'));
 
 // ================ Задание 35  =================
+// Дополни метод updateBook(oldName, newName) так, чтобы он изменял название книги с oldName
+// на newName в свойстве books. Используй indexOf() для того,
+// чтобы найти нужный элемент массива, и splice() для того чтобы заменить этот элемент
+// const bookShelf = {
+//   books: ['The last kingdom', 'Haze', 'The guardian of dreams'],
+//   updateBook(oldName, newName) {
+//     // Change code below this line
+//     const oldBookIndex = this.books.indexOf(oldName);
+//     this.books.splice(oldBookIndex, 1, newName);
+
+//     // Change code above this line
+//   },
+// };
+// bookShelf.updateBook('Haze', 'Dungeon chronicles');
+// console.log(bookShelf.books);
+// bookShelf.updateBook('The last kingdom', 'Dune');
+// console.log(bookShelf.books);
+
+// // ================ Задание 36  =================
+// const atTheOldToad = {
+//   // Change code below this line
+//   potions: ['Speed potion', 'Dragon breath', 'Stone skin'],
+//   getPotions() {
+//     return this.potions;
+//   },
+//   // Change code above this line
+// };
+
+// ================ Задание 38  =================
+// const atTheOldToad = {
+//   potions: ['Speed potion', 'Dragon breath', 'Stone skin'],
+//   addPotion(potionName) {
+//     // Change code below this line
+//     this.potions.push(potionName);
+//     // Change code above this line
+//   },
+// };
 
 // ================ Задание 39  =================
 // const atTheOldToad = {
@@ -483,3 +520,78 @@ console.log(bookShelf.updateBook('Sands of dune', 'Dune'));
 //     this.potions.splice(this.potions.indexOf(potionName), 1);
 //   },
 // };
+// const atTheOldToad = {
+//   potions: ['Speed potion', 'Dragon breath', 'Stone skin'],
+//   removePotion(potionName) {
+//     // Change code below this line
+//     const potionIndex = this.potions.indexOf(potionName);
+//     this.potions.splice(potionIndex, 1);
+//     // Change code above this line
+//   },
+// };
+
+// atTheOldToad.removePotion('Dragon breath');
+// console.log(atTheOldToad);
+// atTheOldToad.removePotion('Speed potion');
+// console.log(atTheOldToad);
+
+// ================ Задание 40  =================
+// Дополни метод updatePotionName(oldName, newName) так,
+//   чтобы он обновлял название зелья с oldName на newName,
+//     в массиве зелий в свойстве potions.
+// const atTheOldToad = {
+//   potions: ['Speed potion', 'Dragon breath', 'Stone skin'],
+//   updatePotionName(oldName, newName) {
+//     const oldNameIndex = this.potions.indexOf(oldName);
+//     this.potions.splice(oldNameIndex, 1, newName);
+//   },
+// };
+// atTheOldToad.updatePotionName('Dragon breath', 'Polymorth');
+// console.log(atTheOldToad.potions);
+// atTheOldToad.updatePotionName('Stone skin', 'Invisible');
+// console.log(atTheOldToad.potions);
+
+// ================ Задание 41 =================
+
+const atTheOldToad = {
+  potions: [
+    { name: 'Speed potion', price: 460 },
+    { name: 'Dragon breath', price: 780 },
+    { name: 'Stone skin', price: 520 },
+  ],
+  // Change code below this line
+  getPotions() {
+    return this.potions;
+  },
+  addPotion(potionName) {
+    const { potions } = this;
+    const { name } = potionName;
+    for (let i = 0; i < potions.length; i += 1) {
+      if (potions[i].name === name) {
+        return `Potion ${name} is already equipped!`;
+      }
+      potions.push(potionName);
+    }
+  },
+  removePotion(potionName) {
+    const { potions } = this;
+    for (let i = 0; i < potions.length; i += 1) {
+      if (potions[i].name === potionName) {
+        potions.splice(i, 1);
+        return potions;
+      }
+    }
+    return `Potion ${potionName} is not in inventory!`;
+  },
+  updatePotionName(oldName, newName) {
+    const { potions } = this;
+    for (let i = 0; i < potions.length; i += 1) {
+      if (potions[i].name === oldName) {
+        potions[i].name = newName;
+        return potions;
+      }
+    }
+    return `Potion ${oldName} is not in inventory!`;
+  },
+  // Change code above this line
+};
